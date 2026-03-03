@@ -22,13 +22,13 @@ let package = Package(
         .target(
             name: "fftools",
             dependencies: [
-                "Libavcodec-GPL",
-                "Libavdevice-GPL",
-                "Libavfilter-GPL",
-                "Libavformat-GPL",
-                "Libavutil-GPL",
-                "Libswresample-GPL",
-                "Libswscale-GPL",
+                "Libavcodec",
+                "Libavdevice",
+                "Libavfilter",
+                "Libavformat",
+                "Libavutil",
+                "Libswresample",
+                "Libswscale",
                 "Libssl",
                 "Libcrypto",
                 "Libass",
@@ -92,37 +92,37 @@ let package = Package(
             dependencies: ["fftools"]
         ),
         .binaryTarget(
-            name: "Libavcodec-GPL",
+            name: "Libavcodec",
             url: "https://github.com/mpvkit/MPVKit/releases/download/0.41.0/Libavcodec-GPL.xcframework.zip",
             checksum: "41955b57c7303678ae563489d452ba202a279f42c909b6bf2fa3aa08df5e9b44"
         ),
         .binaryTarget(
-            name: "Libavdevice-GPL",
+            name: "Libavdevice",
             url: "https://github.com/mpvkit/MPVKit/releases/download/0.41.0/Libavdevice-GPL.xcframework.zip",
             checksum: "ac7ce10c8fc2cec8a684c7d0bca3658bb01292f7624108653bee887db80917f7"
         ),
         .binaryTarget(
-            name: "Libavfilter-GPL",
+            name: "Libavfilter",
             url: "https://github.com/mpvkit/MPVKit/releases/download/0.41.0/Libavfilter-GPL.xcframework.zip",
             checksum: "2f3a3978387e5a3800f56566001d45bd8e9dbd6e3e59e09150534bea0c7b11fc"
         ),
         .binaryTarget(
-            name: "Libavformat-GPL",
+            name: "Libavformat",
             url: "https://github.com/mpvkit/MPVKit/releases/download/0.41.0/Libavformat-GPL.xcframework.zip",
             checksum: "2a9b0d93ba3c89fe7bffd49967817117338911667a81f70ec8d69f2a87ff0eac"
         ),
         .binaryTarget(
-            name: "Libavutil-GPL",
+            name: "Libavutil",
             url: "https://github.com/mpvkit/MPVKit/releases/download/0.41.0/Libavutil-GPL.xcframework.zip",
             checksum: "e1fd23295c77a5ecdfe4d2f640f71762bba1c72db18c3ac1e16fd3d075b611b2"
         ),
         .binaryTarget(
-            name: "Libswresample-GPL",
+            name: "Libswresample",
             url: "https://github.com/mpvkit/MPVKit/releases/download/0.41.0/Libswresample-GPL.xcframework.zip",
             checksum: "1b6ea15454dfa29536d86912de97973693bd6fe6495f7a10b571df9eb533da0b"
         ),
         .binaryTarget(
-            name: "Libswscale-GPL",
+            name: "Libswscale",
             url: "https://github.com/mpvkit/MPVKit/releases/download/0.41.0/Libswscale-GPL.xcframework.zip",
             checksum: "0744713463132e5f5df0e9f2624eb764a4275887f04b6ac46b5d7eb3fe144743"
         ),
