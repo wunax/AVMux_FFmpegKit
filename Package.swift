@@ -93,38 +93,38 @@ let package = Package(
         ),
         .binaryTarget(
             name: "Libavcodec",
-            url: "https://github.com/mpvkit/MPVKit/releases/download/0.41.0/Libavcodec-GPL.xcframework.zip",
-            checksum: "41955b57c7303678ae563489d452ba202a279f42c909b6bf2fa3aa08df5e9b44"
+            url: "https://github.com/wunax/AVMux_FFmpegKit/releases/download/1.0.0/Libavcodec.xcframework.zip",
+            checksum: "5f1111c6538ad4d1c9a634565dcf1151de50b629148f431af949aa946259b411"
         ),
         .binaryTarget(
             name: "Libavdevice",
-            url: "https://github.com/mpvkit/MPVKit/releases/download/0.41.0/Libavdevice-GPL.xcframework.zip",
-            checksum: "ac7ce10c8fc2cec8a684c7d0bca3658bb01292f7624108653bee887db80917f7"
+            url: "https://github.com/wunax/AVMux_FFmpegKit/releases/download/1.0.0/Libavdevice.xcframework.zip",
+            checksum: "609f268bcb13c0743793c5ae95d24472c2fe939b5c8e20b2c12de9867bc8e063"
         ),
         .binaryTarget(
             name: "Libavfilter",
-            url: "https://github.com/mpvkit/MPVKit/releases/download/0.41.0/Libavfilter-GPL.xcframework.zip",
-            checksum: "2f3a3978387e5a3800f56566001d45bd8e9dbd6e3e59e09150534bea0c7b11fc"
+            url: "https://github.com/wunax/AVMux_FFmpegKit/releases/download/1.0.0/Libavfilter.xcframework.zip",
+            checksum: "bdaa355e9c47609c64e99c0d59c9cf41b99e564f29aaac43cb6bb4381b7dbde9"
         ),
         .binaryTarget(
             name: "Libavformat",
-            url: "https://github.com/mpvkit/MPVKit/releases/download/0.41.0/Libavformat-GPL.xcframework.zip",
-            checksum: "2a9b0d93ba3c89fe7bffd49967817117338911667a81f70ec8d69f2a87ff0eac"
+            url: "https://github.com/wunax/AVMux_FFmpegKit/releases/download/1.0.0/Libavformat.xcframework.zip",
+            checksum: "d6810905020b1f692af80462471c8eaabf1adc0e629b72bb50fb777342d58416"
         ),
         .binaryTarget(
             name: "Libavutil",
-            url: "https://github.com/mpvkit/MPVKit/releases/download/0.41.0/Libavutil-GPL.xcframework.zip",
-            checksum: "e1fd23295c77a5ecdfe4d2f640f71762bba1c72db18c3ac1e16fd3d075b611b2"
+            url: "https://github.com/wunax/AVMux_FFmpegKit/releases/download/1.0.0/Libavutil.xcframework.zip",
+            checksum: "b0d0ee7f8b8a55b9ee5e5c2f27e347265413b096b20bca39586f919d9cb7b4bc"
         ),
         .binaryTarget(
             name: "Libswresample",
-            url: "https://github.com/mpvkit/MPVKit/releases/download/0.41.0/Libswresample-GPL.xcframework.zip",
-            checksum: "1b6ea15454dfa29536d86912de97973693bd6fe6495f7a10b571df9eb533da0b"
+            url: "https://github.com/wunax/AVMux_FFmpegKit/releases/download/1.0.0/Libswresample.xcframework.zip",
+            checksum: "5eb2d1d2414ebfcfe69c84e12488ca53a20d5aaeb5eea54406314e44110021ee"
         ),
         .binaryTarget(
             name: "Libswscale",
-            url: "https://github.com/mpvkit/MPVKit/releases/download/0.41.0/Libswscale-GPL.xcframework.zip",
-            checksum: "0744713463132e5f5df0e9f2624eb764a4275887f04b6ac46b5d7eb3fe144743"
+            url: "https://github.com/wunax/AVMux_FFmpegKit/releases/download/1.0.0/Libswscale.xcframework.zip",
+            checksum: "3d63b66d45a3958418718c24a18eb5dfc08fd26ea56e5413c9224512d3a65fc7"
         ),
         .binaryTarget(
             name: "Libcrypto",
