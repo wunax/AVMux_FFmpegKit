@@ -69,6 +69,17 @@ enum show_muxdemuxers {
 
 static FILE *report_file;
 static int report_file_level = AV_LOG_DEBUG;
+static const char *program_name = "ffmpeg";
+static int program_birth_year = 2000;
+static ShowHelpDefaultCB show_help_default_cb;
+
+void cmdutils_set_program_info(const char *name, int birth_year,
+                               ShowHelpDefaultCB cb)
+{
+    program_name = name ? name : "ffmpeg";
+    program_birth_year = birth_year;
+    show_help_default_cb = cb;
+}
 
 int show_license(void *optctx, const char *opt, const char *arg)
 {
@@ -588,7 +599,8 @@ int show_help(void *optctx, const char *opt, const char *arg)
         *par++ = 0;
 
     if (!*topic) {
-        show_help_default(topic, par);
+        if (show_help_default_cb)
+            show_help_default_cb(topic, par);
     } else if (!strcmp(topic, "decoder")) {
         show_help_codec(par, 0);
     } else if (!strcmp(topic, "encoder")) {
@@ -606,7 +618,8 @@ int show_help(void *optctx, const char *opt, const char *arg)
     } else if (!strcmp(topic, "bsf")) {
         show_help_bsf(par);
     } else {
-        show_help_default(topic, par);
+        if (show_help_default_cb)
+            show_help_default_cb(topic, par);
     }
 
     av_freep(&topic);

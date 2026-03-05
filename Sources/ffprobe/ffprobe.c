@@ -88,8 +88,8 @@ typedef struct InputFile {
     int       nb_streams;
 } InputFile;
 
-const char program_name[] = "ffprobe";
-const int program_birth_year = 2007;
+static const char ffprobe_program_name[] = "ffprobe";
+static const int ffprobe_program_birth_year = 2007;
 
 static int do_analyze_frames = 0;
 static int do_bitexact = 0;
@@ -2517,7 +2517,7 @@ end:
 static void show_usage(void)
 {
     av_log(NULL, AV_LOG_INFO, "Simple multimedia streams analyzer\n");
-    av_log(NULL, AV_LOG_INFO, "usage: %s [OPTIONS] INPUT_FILE\n", program_name);
+    av_log(NULL, AV_LOG_INFO, "usage: %s [OPTIONS] INPUT_FILE\n", ffprobe_program_name);
     av_log(NULL, AV_LOG_INFO, "\n");
 }
 
@@ -2529,7 +2529,7 @@ static void ffprobe_show_program_version(AVTextFormatContext *tfc)
     avtext_print_section_header(tfc, NULL, SECTION_ID_PROGRAM_VERSION);
     print_str("version", FFMPEG_VERSION);
     print_fmt("copyright", "Copyright (c) %d-%d the FFmpeg developers",
-              program_birth_year, CONFIG_THIS_YEAR);
+              ffprobe_program_birth_year, CONFIG_THIS_YEAR);
     print_str("compiler_ident", CC_IDENT);
     print_str("configuration", FFMPEG_CONFIGURATION);
     avtext_print_section_footer(tfc);
@@ -2773,7 +2773,7 @@ static int opt_print_filename(void *optctx, const char *opt, const char *arg)
     return print_input_filename ? 0 : AVERROR(ENOMEM);
 }
 
-void show_help_default(const char *opt, const char *arg)
+static void ffprobe_show_help_default(const char *opt, const char *arg)
 {
     av_log_set_callback(log_callback_help);
     show_usage();
@@ -3068,6 +3068,8 @@ int ffprobe_execute(int argc, char **argv)
     int ret, input_ret, i;
 
     init_dynload();
+    cmdutils_set_program_info(ffprobe_program_name, ffprobe_program_birth_year,
+                              ffprobe_show_help_default);
 
     setvbuf(stderr, NULL, _IONBF, 0); /* win32 runtime needs this */
 
@@ -3184,7 +3186,7 @@ int ffprobe_execute(int argc, char **argv)
              (!do_show_program_version && !do_show_library_versions && !do_show_pixel_formats))) {
             show_usage();
             av_log(NULL, AV_LOG_ERROR, "You have to specify one input file.\n");
-            av_log(NULL, AV_LOG_ERROR, "Use -h to get full help or, even better, run 'man %s'.\n", program_name);
+            av_log(NULL, AV_LOG_ERROR, "Use -h to get full help or, even better, run 'man %s'.\n", ffprobe_program_name);
             ret = AVERROR(EINVAL);
         } else if (input_filename) {
             ret = probe_file(tctx, input_filename, print_input_filename);

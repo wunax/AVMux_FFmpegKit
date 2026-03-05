@@ -34,15 +34,13 @@
 #undef main /* We don't want SDL to override our main() */
 #endif
 
-/**
- * program name, defined by the program for show_version().
- */
-extern const char program_name[];
+typedef void (*ShowHelpDefaultCB)(const char *opt, const char *arg);
 
 /**
- * program birth year, defined by the program for show_banner()
+ * Set per-program metadata and help callback used by shared opt_common code.
  */
-extern const int program_birth_year;
+void cmdutils_set_program_info(const char *name, int birth_year,
+                               ShowHelpDefaultCB show_help_default_cb);
 
 extern AVDictionary *sws_dict;
 extern AVDictionary *swr_opts;
@@ -277,12 +275,6 @@ void show_help_options(const OptionDef *options, const char *msg, int req_flags,
  * children.
  */
 void show_help_children(const AVClass *class, int flags);
-
-/**
- * Per-fftool specific help handler. Implemented in each
- * fftool, called by show_help().
- */
-void show_help_default(const char *opt, const char *arg);
 
 /**
  * Parse the command line arguments.

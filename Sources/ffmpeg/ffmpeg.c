@@ -83,8 +83,8 @@
 #include "ffmpeg_utils.h"
 #include "graph/graphprint.h"
 
-const char program_name[] = "ffmpeg";
-const int program_birth_year = 2000;
+static const char ffmpeg_program_name[] = "ffmpeg";
+static const int ffmpeg_program_birth_year = 2000;
 
 FILE *vstats_file;
 
@@ -983,6 +983,8 @@ int ffmpeg_execute(int argc, char **argv)
     BenchmarkTimeStamps ti;
 
     init_dynload();
+    cmdutils_set_program_info(ffmpeg_program_name, ffmpeg_program_birth_year,
+                              ffmpeg_show_help_default);
 
     setvbuf(stderr,NULL,_IONBF,0); /* win32 runtime needs this */
 
@@ -1009,7 +1011,7 @@ int ffmpeg_execute(int argc, char **argv)
 
     if (nb_output_files <= 0 && nb_input_files == 0) {
         show_usage();
-        av_log(NULL, AV_LOG_WARNING, "Use -h to get full help or, even better, run 'man %s'\n", program_name);
+        av_log(NULL, AV_LOG_WARNING, "Use -h to get full help or, even better, run 'man %s'\n", ffmpeg_program_name);
         ret = 1;
         goto finish;
     }

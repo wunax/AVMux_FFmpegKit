@@ -82,6 +82,7 @@ char *print_graphs_file = NULL;
 char *print_graphs_format = NULL;
 int auto_conversion_filters = 1;
 int64_t stats_period = 500000;
+static const char ffmpeg_program_name[] = "ffmpeg";
 
 
 static int file_overwrite     = 0;
@@ -1206,7 +1207,7 @@ static int opt_filter_complex_script(void *optctx, const char *opt, const char *
 }
 #endif
 
-void show_help_default(const char *opt, const char *arg)
+void ffmpeg_show_help_default(const char *opt, const char *arg)
 {
     int show_advanced = 0, show_avoptions = 0;
 
@@ -1230,7 +1231,7 @@ void show_help_default(const char *opt, const char *arg)
            "\n"
            "Per-stream options can be followed by :<stream_spec> to apply that option to specific streams only. "
            "<stream_spec> can be a stream index, or v/a/s for video/audio/subtitle (see manual for full syntax).\n"
-           "\n", program_name);
+           "\n", ffmpeg_program_name);
 
     show_help_options(options, "Print help / information / capabilities:",
                       OPT_EXIT, OPT_EXPERT);
@@ -1326,7 +1327,7 @@ void show_help_default(const char *opt, const char *arg)
 void show_usage(void)
 {
     av_log(NULL, AV_LOG_INFO, "Universal media converter\n");
-    av_log(NULL, AV_LOG_INFO, "usage: %s [options] [[infile options] -i infile]... {[outfile options] outfile}...\n", program_name);
+    av_log(NULL, AV_LOG_INFO, "usage: %s [options] [[infile options] -i infile]... {[outfile options] outfile}...\n", ffmpeg_program_name);
     av_log(NULL, AV_LOG_INFO, "\n");
 }
 

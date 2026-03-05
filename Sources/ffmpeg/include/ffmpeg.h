@@ -809,6 +809,8 @@ void fg_send_command(FilterGraph *fg, double time, const char *target,
 
 int ffmpeg_parse_options(int argc, char **argv, Scheduler *sch);
 
+void ffmpeg_show_help_default(const char *opt, const char *arg);
+
 void enc_stats_write(OutputStream *ost, EncStats *es,
                      const AVFrame *frame, const AVPacket *pkt,
                      uint64_t frame_num);
